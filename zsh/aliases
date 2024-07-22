@@ -39,3 +39,7 @@ alias lart='ls -1Fcart --color=auto'
 alias lrt='ls -1Fcrt --color=auto'
 
 alias grep='grep --color'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
