@@ -1,0 +1,34 @@
+SHELL=$(which zsh)
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Enable color output
+export CLICOLOR=1
+
+# Pure Prompt
+fpath+=($HOME/.zsh/pure)
+autoload -U promptinit; promptinit
+prompt pure
+
+# History in cache directory:
+HISTSIZE=100000
+SAVEHIST=100000
+HISTFILE=~/.zsh/history
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)               # Include hidden files.
+
+# Load aliases and shortcuts if existent.
+[ -f "$HOME/.zsh/aliases" ] && source "$HOME/.zsh/aliases"
+[ -f "$HOME/.profile" ] && . "$HOME/.profile"
+
+# zsh plugins
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null # must be last
