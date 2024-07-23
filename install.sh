@@ -2,13 +2,10 @@
 set -ex
 
 # Check that zsh is installed
-if [ ! -f /bin/zsh ]; then
+if [ ! -x "$(command -v zsh)" ]; then
     echo "zsh is not installed. Exiting..."
     exit 1
 fi
-
-touch ~/.zshrc
-
 
 ln -s $(pwd)/zsh ~/.zsh
 touch ~/.zsh/history
