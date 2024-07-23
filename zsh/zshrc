@@ -5,6 +5,9 @@ export LANG=en_US.UTF-8
 # Enable color output
 export CLICOLOR=1
 
+# Default editor
+export EDITOR=vim
+
 # Pure Prompt
 fpath+=($HOME/.zsh/pure)
 autoload -U promptinit; promptinit
