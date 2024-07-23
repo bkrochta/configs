@@ -30,5 +30,6 @@ _comp_options+=(globdots)               # Include hidden files.
 [ -f "$HOME/.profile" ] && . "$HOME/.profile"
 
 # zsh plugins
+source ~/.zsh/z/z.sh 2>/dev/null
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null # must be last
