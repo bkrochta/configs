@@ -17,8 +17,9 @@ prompt pure
 HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=~/.zsh/history
-setopt SHARE_HISTORY
+setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
+setopt EXTENDED_HISTORY
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -30,7 +31,6 @@ _comp_options+=(globdots)               # Include hidden files.
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.zsh/aliases" ] && source "$HOME/.zsh/aliases"
-[ -f "$HOME/.profile" ] && . "$HOME/.profile"
 
 # zsh plugins
 source ~/.zsh/z/z.sh 2>/dev/null
