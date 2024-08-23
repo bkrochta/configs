@@ -8,6 +8,9 @@ export CLICOLOR=1
 # Default editor
 export EDITOR=vim
 
+# Keybinds
+bindkey -e # Emacs keybinds
+
 # Pure Prompt
 fpath+=($HOME/.zsh/pure)
 autoload -U promptinit; promptinit
